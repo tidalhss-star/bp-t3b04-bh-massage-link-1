@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (3/3) · t3b04-bh-massage-link-1</title>
+  <meta name="description" content="t3b04-bh-massage-link-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://banghwa-body-care.mapo-room-guide.xyz/posts-3.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root {
+      --bg-color: #121210;
+      --fg-color: #e6e3db;
+      --accent-color: #c29d6d;
+      --card-bg: #1c1c18;
+      --border-color: rgba(194, 157, 109, 0.25);
+      --font-serif: 'Nanum Myeongjo', serif;
+      --font-sans: 'Outfit', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg-color);
+      color: var(--fg-color);
+      font-family: var(--font-serif);
+      line-height: 1.8;
+      padding: 40px;
+    }
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 32px;
+    }
+    .brand {
+      font-family: var(--font-sans);
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    nav { display: flex; gap: 32px; }
+    nav a {
+      color: #a5a29a;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+    }
+    nav a:hover { color: var(--accent-color); }
+    
+    main { margin-bottom: 100px; }
+    .label {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--accent-color);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #ffffff;
+      margin-bottom: 48px;
+      letter-spacing: -0.01em;
+    }
+    .intro-text {
+      font-size: 1.2rem;
+      color: #cecbd2;
+      font-weight: 400;
+      max-width: 800px;
+      margin-bottom: 80px;
+      text-align: justify;
+    }
+    .intro-text p { margin-bottom: 28px; }
+    
+    .section-title {
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      letter-spacing: 0.2em;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+    .grid-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 100px;
+    }
+    @media(max-width: 768px) {
+      .grid-section { grid-template-columns: 1fr; }
+    }
+    .essay-card {
+      border: 1px solid var(--border-color);
+      padding: 30px;
+      background-color: var(--card-bg);
+    }
+    .essay-card h3 {
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .essay-card p {
+      font-size: 0.95rem;
+      color: #b5b2aa;
+      text-align: justify;
+    }
+
+    /* PBN Feeds */
+    .pbn-feed-section {
+      margin-top: 100px;
+    }
+    .pbn-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .pbn-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .pbn-card:hover {
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+    .pbn-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--accent-color);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .pbn-meta span {
+      border: 1px solid var(--accent-color);
+      padding: 2px 10px;
+    }
+    .pbn-card h4 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 14px;
+      line-height: 1.4;
+      font-family: var(--font-serif);
+    }
+    .pbn-card p {
+      font-size: 0.95rem;
+      color: #cecbd2;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .read-more {
+      align-self: flex-start;
+      color: var(--accent-color);
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: var(--font-sans);
+      letter-spacing: 0.05em;
+    }
+    
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 48px;
+      margin-top: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: #7a7770;
+    }
+    footer a { color: #7a7770; text-decoration: none; margin-left: 20px; }
+    footer a:hover { color: var(--accent-color); }
+    
+    @media(max-width: 768px) {
+      header { flex-direction: column; gap: 24px; align-items: flex-start; }
+      h1 { font-size: 2.2rem; }
+      footer { flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+  <meta property="og:title" content="글 목록 (3/3) · t3b04-bh-massage-link-1">
+  <meta property="og:description" content="t3b04-bh-massage-link-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://banghwa-body-care.mapo-room-guide.xyz/posts-3.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="brand">ARCHIVE.BH</a>
+      <nav>
+        <a href="index.html">JOURNAL</a>
+        <a href="sitemap.xml">SITEMAP</a>
+      </nav>
+    </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 44개 · 3/3 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-002-1tq56g6.html">방화 마사지 링크 처음 알아볼 때 실제로 많이 묻는 질문 5가지</a>
+        <p class="post-item__summary">방화 지역에서 마사지 서비스를 처음 이용하려고 하면 어디서부터 정보를 얻어야 할지 막막할 수 있습니다. 온라인 커뮤니티나 검색 포털을 통해 방화 마사지 링크를 찾다 보면 안전한 곳인지 혹은 신뢰할 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-001.html">방화 마사지 링크, 3개월간의 리얼 솔직 후기: MK울트라 프로젝트의 은밀한 코드</a>
+        <p class="post-item__summary">함께 보면 좋은 정보</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-002.html">편집자 실수로 남은 0.04 초의 공포, 그걸 방화 마사지 링크라고 부를 순 없겠지</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/t3link-006.html">권리금 2억 썰, 홍대 가게 훅 가는 거? 그거 사실 사장님들 비명이야, 진짜로.</a>
+        <p class="post-item__summary">진짜 속 터지는 건 뭐냐면, 계약서에 도장 찍을 때 그 기분 알잖아요. 권리금 2억? 그거 받으면서 나가는 사장님 마음이 얼마나 찢어지겠어요. 그 2억이라는 숫자가 그냥 뚝딱 나온 게 아니라고요. </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <a class="pager__link" href="posts-2.html">2</a>
+      <span class="pager__current">3</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
